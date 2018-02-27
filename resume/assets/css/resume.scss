@@ -1,0 +1,300 @@
+/****************************************** 
+* Main Resume Stylings                    *
+*******************************************/
+//styles in the timeline
+.lead-up {
+  font-size: 0.8em;
+}
+
+.main-inner {
+  width: auto;
+  min-width: 90% !important;
+  .content {
+    width: auto;
+    min-width: 90% !important;
+  }
+}
+
+.resume {
+  box-sizing: border-box;
+
+  .resume-title {
+    font-family: Bebas, sans-serif;
+    text-align: center;
+    line-height: 0px;
+    .title {
+      font-size: 3em;
+    }
+    br {
+      display: block;
+      margin: 0;
+    }
+    .subtitle {
+      font-size: 1em;
+      line-height: 27px;
+      letter-spacing: 5.2px;
+      padding-left: 3.1px;
+    }
+  }
+
+  .section-header {
+    font-size: 2em;
+
+    i {
+      padding-right: 8px;
+    }
+  }
+
+  .timeline {
+    height: 180px;
+  }
+
+  .row {
+    .cell {
+      .cell-header {
+        position: relative;
+        font-size: 0.8em;
+        .badge {
+          position: absolute;
+          top: 0;
+          right: 0;
+          padding: 0 4px;
+          margin: 15px 10px;
+          background-color: #ccc;
+          color: #fff;
+          font-size: 0.8em;
+        }
+        .workplace-icon {
+          font-size: 2em;
+          padding-bottom: 0;
+          a {
+              border-bottom: 1px solid transparent;
+              transition-property: border-color;
+              transition-duration: 0.2s;
+              transition-timing-function: ease-in-out;
+              transition-delay: 0s;
+            &:hover {
+              border-bottom: 1px solid #999;
+            }
+
+          }
+          &.smaller {
+            font-size: 1.4em;
+            padding: 7px 0;
+          }
+        }
+        .skill-subtitle {
+          font-size: 0.6em;
+          margin-top: -10px;
+          color: #444;
+        }
+        .workplace-title {
+          font-size: 1em;
+          margin-top: -10px;
+          color: #444;
+        }
+
+      }
+      .cell-body {
+        .description {
+          font-size: 0.9em;
+          .timeframe {
+            color: #000;
+          }
+        }
+        .chart {
+          margin: 0 auto;
+          width: 100%;
+
+          .duties-title-container {
+            text-align: center;
+            .duties-title {
+              border-bottom: 1px solid #444;
+            }
+          }
+          .duties-footer {
+            text-align: center;
+            font-size: 0.8em;
+            color: #a0a0a0;
+          }
+        }
+
+        .skill-scale {
+          display: flex;
+          width: 70%;
+          padding-left: 15%;
+          text-align: center;
+          div {
+            flex: 1;
+            font-size: 10px;
+          }
+        }
+
+        .chart-text {
+          padding: 10px;
+          height: 180px;
+        }
+
+        .other-software {
+          width: 100%;
+          padding-top: 10px;
+
+          .Grid-cell {
+            height: 2em;
+          }
+
+          i { 
+            font-size: 1.5em;
+            &:hover { cursor: pointer; 
+              font-size: 1.7em}
+          }
+          .resume-icon-ps:hover { color: #00A4E4; } //blue
+          .resume-icon-id:hover { color: #FF408C; } //pink
+          .resume-icon-ai:hover { color: #FBB034; } //orange
+          .resume-icon-docx:hover { color: #00188f; } 
+          .resume-icon-xlsx:hover { color: #007233; }
+          .resume-icon-ppt:hover { color: #dd5900; }
+          .resume-icon-finalcut:hover { color: #a9a9f6; } //purple
+          .resume-icon-webpack:hover { color: #A2BDE9; }
+          .resume-icon-windows:hover { color: #00bcf2; } //windows
+          .resume-icon-mac:hover { color: #b3b3b3; }
+          .resume-icon-linux:hover { color: #000; }
+          //new
+          .resume-icon-django:hover { color: #0C3C26; }
+          .resume-icon-python:hover { color: #3776AB; }
+          .resume-icon-html:hover { color: #E54B26; }
+          .resume-icon-javascript:hover { color: #F7DF1E; }
+          .resume-icon-mssql:hover { color: #EA2729; }
+          .resume-icon-postgres:hover { color: #336791; }
+          .resume-icon-mysql-alt:hover { color: #00758F; }
+          .resume-icon-jquery:hover { color: #0868AB; }
+          .resume-icon-reactjs:hover { color: #00D8FF; }
+          .resume-icon-redux:hover { color: #8B66C5; }
+          .resume-icon-css:hover { color: #2062AF; }
+          .resume-icon-salesforce:hover { color: #00A1E0; }
+          .resume-icon-centos:hover { color: #1565AF; }
+          .resume-icon-nodejs:hover { color: #8CC84B; }
+          .resume-icon-heroku:hover { color: #430098; }
+          .resume-icon-aws:hover { color: #F68D11; }
+          .resume-icon-circleci:hover { color: #0E4C64; }
+          .resume-icon-git:hover { color: #F05033; }
+
+        }
+
+        .other-software-chart {
+          width: 100%;
+          #other-software-bar {
+            height: 10px; 
+            width: 80%;
+            display: inline-block;
+            -webkit-transition: width 1.5s; /* Safari */
+            transition: width 1.5s;
+            background-color: #fff;
+            #other-software-feature-name {
+              font-size: 10px;
+            }
+          }
+          .other-software-feature {
+            width: 40px;
+            display: inline-block;
+            i {
+              font-size: 1.5em;
+            }
+          }
+          #other-software-percentage {
+            font-size: 9px;
+            vertical-align: top;
+          }
+          .other-software-legend {
+            display: flex;
+            width: 100%;
+            color: #fff;
+            text-align: center;
+            .other-software-legend-value {
+              flex: 1;
+              font-size: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .pub {
+    margin: 0 auto;
+    height: 200px;
+    a {
+      img {
+          -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+          filter: grayscale(100%);
+          opacity: 0.4;
+          margin: 0 auto;
+          &:hover {
+            -webkit-filter: grayscale(0%); /* Chrome, Safari, Opera */
+            filter: grayscale(0%);
+            opacity: 1;
+          }
+      }
+    }
+  }
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    //background-color: #000;
+    background-color: rgba(0,0,0,0.7);
+    // filter:alpha(opacity=70);
+    // -moz-opacity:0.7;
+    // -khtml-opacity: 0.7;
+    // opacity: 0.7;
+    z-index: 10000;
+
+    .overlay-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      flex-direction: column;
+
+      .skill-icon-container {
+        font-size: 5em;
+        color: #fff;
+      }
+
+      .skill-title {
+        font-size: 1.2em;
+        color: #fff;
+      }
+
+      #supp-links {
+        color: rgba(255,255,255,0.8);
+        cursor: pointer;
+      }
+
+      .skill-description-container {
+        flex: 1;
+        width: 100%;
+        justify-content: center;
+        display: flex;
+
+        iframe {
+            width: 50%;
+            background-image: url(../img/spinner.svg); 
+            background-repeat: no-repeat;
+            //background-attachment: fixed;
+            background-position: center top;
+        }
+      }
+    }
+
+    #close-overlay {
+      cursor: pointer;
+      position: absolute;
+      top: 1em;
+      right: 1em;
+      color: #fff;
+    }
+}
