@@ -1,0 +1,1239 @@
+<!doctype html>
+<html class="theme-next use-motion ">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<!-- d3 scripts -->
+<script src="/vendors/jquery/index.js" charset="utf-8"></script>
+<script src="/vendors/d3/d3.min.js" charset="utf-8"></script>
+<script src="/vendors/d3/topojson.v1.min.js" charset="utf-8"></script>
+<!-- end d3 scripts -->
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+
+    <link rel="stylesheet" type="text/css" href="/vendors/unslider/css/unslider.css"/>
+    <link rel="stylesheet" type="text/css" href="/vendors/unslider/css/unslider-dots.css"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.2"/>
+
+
+
+
+  <meta name="keywords" content="romania,roadtrip," />
+
+
+
+
+
+  <link rel="shortcut icon" href="/favicon.ico?v=0.4.2" />
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-1180727794364095",
+    enable_page_level_ads: true
+  });
+</script>
+
+
+
+  <title> Romanian Road Trip // Hank </title>
+</head>
+
+<body>
+<!--[if lte IE 8]> <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'> <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari." style='margin-left:auto;margin-right:auto;display: block;'/></a></div> <![endif]-->
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">Hank</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+
+  <ul id="menu" class="menu">
+     
+    
+      
+      <li class="menu-item menu-item-home">
+        <a href="/">
+          <i class="menu-item-icon icon-home"></i> <br />
+          Home
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-tags">
+        <a href="/tags">
+          <i class="menu-item-icon icon-tags"></i> <br />
+          Tags
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-resume">
+        <a href="/resume">
+          <i class="menu-item-icon icon-resume"></i> <br />
+          R&eacute;sum&eacute;
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-projects">
+        <a href="/projects">
+          <i class="menu-item-icon icon-projects"></i> <br />
+          Projects
+        </a>
+      </li>
+    
+  </ul>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  <div class="post post-type-normal ">
+    
+      <div class="post-header-banner" style='background-image: url("/images/romtrip.jpg");'>
+    
+      <div class="post-title-container">
+        
+        
+          <h1 class="post-title">
+            
+            
+              
+                <span style="color: #fff">Romanian Road Trip</span>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            Posted on 2015-11-30
+          </span>
+
+          
+
+          
+            
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <style>
+
+.location-header {
+  padding: 0;
+  font-weight: bold;
+  line-height: 1;
+  font-family: Bebas, sans-serif;
+  font-size: 22px;
+}
+
+.subunit { fill: #f1f1f1; }
+
+.subunit-boundary {
+  fill: none;
+  stroke: #777;
+  stroke-dasharray: 2,2;
+  stroke-linejoin: round;
+}
+
+.place {
+  fill: #000;
+}
+
+.roadtrip-poi {
+  fill: transparent;
+  stroke: transparent;
+}
+
+.roadtrip-poi-after {
+  fill: #BD0000;
+  stroke: #fff;
+  cursor: pointer;
+}
+
+.roadtrip-poi-after.active {
+  fill: #fff;
+  stroke: #BD0000;
+  cursor: pointer;
+}
+
+.roadtrip-poi-after.active.selected {
+  fill: #a10000;
+  stroke: #BD0000;
+  cursor: pointer;
+}
+
+.roadtrip-poi-label {
+  fill: transparent;
+  font-family: sans-serif;
+}
+
+.roadtrip-poi-label-after {
+  fill: #000;
+  font-family: sans-serif;
+}
+
+
+
+.roadtrip-line {
+  fill: transparent;
+  stroke: #BD0000;
+}
+
+.place-label {
+  font-family: sans-serif;
+  fill: #000;
+  font-size: 10px;
+  font-weight: 100;
+  text-anchor: middle;
+}
+
+</style>
+<div style="width: 100%;">
+  <h4 style="text-align: center;">Romania</h4>
+  <div id="map"></div>
+  <span id="info">
+    <span class="location-header">Romanian Road-Trip</span>
+    <p> 
+      Part of the joy of living with locals while travelling is that you can embark on weekend long roadtrips with no need to plan. I discovered this as Bogdan, Iulius and I set sail on Halloween Saturday morning with some long coffees and <a href="https://en.wikipedia.org/wiki/Automobile_Dacia" target="_blank" rel="noopener">Dacia</a> full of gas. Beyond the direction we were headed being North, I was completely unbeknownst as to what the trip had in store, and I wouldn't have it any other way.
+    </p>
+    <p>
+      Above you'll see the route of our travels. Click any of the red circles to read more about that stop of our journey.
+    </p>
+  </span>
+  <!--Sigi-->
+  <span id="sigi" style="display: none;">
+    <span class="location-header">Sighișoara</span>
+    <p>
+      Sighișoara is gorgeous. It's one of the only inhabited fortified citadels in Europe, and it's been well taken care of. In the middle of the town is a big assed clock tower that you can (for a small fee) still access the top of. Here's the unreal view from it, and supporting evidence of my 'gorgeous' claim. 
+    </p>
+    <img src="/images/romtrip/sigi.jpg">
+    <p>
+      We spent the night here at a BnB owned probably the most overwhelmingly friendly people I've met. After checking in we given a shot of <a href="https://en.wikipedia.org/wiki/P%C3%A1linka" target="_blank" rel="noopener">Pálinka</a> (which sends shivers down your spine its so strong) and shown our rooms. While making some plans for the night with my travelling companions, a knock on our door yielded a complimentary bottle of wine from our hostesses to welcome me to Romania.
+    </p>
+    <p>
+      Best part of Sighi? The breakfast we had Sunday morning. The only thing more beautiful than the view was our waitress. Check out this place:
+    </p>
+    <img src="/images/romtrip/breaky.jpg">
+  </span>
+  <!--Bran-->
+  <span id="bran" style="display: none;">
+    <span class="location-header">Castle Bran</span>
+    <p>
+      I'm told the celebration of Halloween is rather new in Europe, and costumes seem to be much less elobroate than that of 'go-hard' Western norms. Perhaps it's appropriate then, that our first stop on the journey was non other than Dracula's castle.
+    </p>
+    <img src="/images/romtrip/bran.jpg">
+    <p>
+     'Castle Bran' as they insisted on calling it despite my objection, is quite the sight. It's converted into a museum that offers a slew of information both on the history of the Castle and the origins of Bram Stoker's novel. None of this I read, as I was too busy trying to craft witty Snapchats and insisting to my co-travellers that dracula still resided here. Key takeaway? Iulius is actually Vlad the Impaler's (the Ruler whom Dracula is believed to be based on) great-great-great-grandson. 
+    </p>
+    <img src="/images/romtrip/dracoolie.jpg">
+  </span>
+  <!--Viscri-->
+  <span id="visci" style="display: none;">
+    <span class="location-header">Viscri</span>
+    <p>
+      Viscri is a tiny little town, and to my point earlier would likely never have been on the itinerary had I not been accompanied by native Romanians. It has a fortified church in its centre and for an even more modest fee than the tower in Sighișoara you can climb to its apex. 
+    </p>
+    <p>
+      This leg of the journey I was handed the keys to Iulius' white Dacia - and I was pretty pumped. Driving in rural Romania is a lot like Prince Edward County, except even more potholes, and farmers aren't as concerned about their livestock wandering across roads.
+    </p>
+    <img src="/images/romtrip/cowcross.jpg">
+  </span>
+  <!--Rupea-->
+  <span id="rupea" style="display: none;">
+    <span class="location-header">Rupea</span>
+    <p>
+      The theme of the trip seemed to be citadels, as we stopped in Rupea to view yet another relic of medieval Romania. The fort has a spiral path up to the top, where I elected to ruin all of the majesty by performing the childish obsession of my generation.
+    </p>
+    <img src="/images/romtrip/rupea.jpg">
+  </span>
+  <!--Brasov-->
+  <span id="bras" style="display: none;">
+    <span class="location-header">Brașov</span>
+    <p>
+      Brașov is where I learned that 'ș' makes a 'shh' sound. I also learned what the hell a <a href="https://en.wikipedia.org/wiki/K%C3%BCrt%C5%91skal%C3%A1cs" target="_blank" rel="noopener">Kürtőskalács</a> is. It's a delicious baked ring of dough that is coated in sugar. It turns out that butter sugar and flour are tasty no matter where you go.
+    </p>
+    <p>
+      I was also pretty amused to see a familar concept located up in the hills overlooking the city of 200,000+.
+    </p>
+    <img src="/images/romtrip/brasov.jpg">
+  </span>
+  <!--Bucharest-->
+  <span id="buch" style="display: none;">
+    <span class="location-header">Bucharest</span>
+    <p>
+      This has been my home for the last month. By far largest city in Romania (over 2 million) and certainly no shortage of old world beauty. I've talked enough about the city in blogs past, but here is a picture of the stone eagle, perched atop the <a href="https://en.wikipedia.org/wiki/Palace_of_the_National_Military_Circle" target="_blank" rel="noopener">Cercul Militar Național</a> that peers into my room from across the street each morning.
+    </p>
+    <img src="/images/romtrip/eagle.jpg">
+  </span>
+</div>
+
+<!-- <script src="/vendors/jquery/index.js" charset="utf-8"></script>
+<script src="/vendors/d3/d3.min.js" charset="utf-8"></script>
+<script src="/vendors/d3/topojson.v1.min.js" charset="utf-8"></script> -->
+
+<!-- <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="//d3js.org/topojson.v1.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script> -->
+<script>
+
+//Catch the table of contents URL anchor and relocate appropriately
+function getHash() {
+  var hash = window.location.hash;
+  navigate(hash);
+  console.log("HASH: ", hash);
+  return hash.substring(1); // remove #
+}
+
+var navigate = function(name) {
+  var info = '';
+  switch(name) {
+    case "Castle Bran":
+        info = $('#bran').html();
+        break;
+    case "Bucharest":
+        info = $('#buch').html();
+        break;
+    case "Sighișoara":
+        info = $('#sigi').html();
+        break;
+    case "Brașov":
+        info = $('#bras').html();
+        break;
+    case "Rupea":
+        info = $('#rupea').html();
+        break;
+    case "Viscri":
+        info = $('#visci').html();
+        break;
+    default:
+        info = "<b>ERROR!</b>"
+  }
+  $('#info').html(info);
+};
+
+var onPOIClick = function(d) {
+  navigate(d.properties.name);
+};
+
+var width = document.getElementById('map').offsetWidth,
+    height = 400;
+
+var svg = d3.select("#map").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+d3.json("/data/romania-trip.json", function(error, romania) {
+  if (error) return console.error(error);
+
+  console.log("ROM: ", romania);
+  var subunits = topojson.feature(romania, romania.objects.ROU);
+
+  console.log(romania.objects.ROU);
+
+  var projection = d3.geo.albers()
+    .center([25.500, 45.3167])
+    .rotate([0, 0])
+    .parallels([40, 50])
+    .scale(11600)
+    .translate([width / 2, height / 2]);
+
+  var path = d3.geo.path()
+      .projection(projection);
+
+  svg.append("path")
+      .datum(subunits)
+      .attr("d", path);
+
+  //apply classes to the polygons (romania)
+  svg.selectAll(".subunit")
+    .data(topojson.feature(romania, romania.objects.ROU).features)
+  .enter().append("path")
+    .attr("class", function(d) { return "subunit " + d.id; })
+    .attr("d", path);
+
+  //get external borders
+  svg.append("path")
+    .datum(topojson.mesh(romania, romania.objects.ROU, function(a, b) { return a === b; }))
+    .attr("d", path)
+    .attr("class", "subunit-boundary");
+
+  //city circles
+  svg.append("path")
+    .datum(topojson.feature(romania, romania.objects.places))
+    .attr("d", path.pointRadius(4))
+    .attr("class", "place");
+
+  //city labels
+  svg.selectAll(".place-label")
+    .data(topojson.feature(romania, romania.objects.places).features)
+  .enter().append("text")
+    .attr("class", "place-label")
+    .attr("transform", function(d) { return "translate(" + projection(d.geometry.coordinates) + ")"; })
+    .attr("dy", ".55em")
+    .text(function(d) { return d.properties.name; });
+
+  //right justify places left of middle and visa versa
+  svg.selectAll(".place-label")
+    .attr("x", function(d) { return d.geometry.coordinates[0] > -1 ? 9 : -9; })
+    .style("text-anchor", function(d) { return d.geometry.coordinates[0] > -1 ? "start" : "end"; });
+
+  //roadtrip line
+  var roady = svg.append("path")
+    .datum(topojson.feature(romania, romania.objects.roadtripline))
+    .attr("d", path)
+    .attr("class", "roadtrip-line");
+
+
+  //roadtrip circles
+  var POIs = svg.append("path")
+      .datum(topojson.feature(romania, romania.objects.roadtripPOI))
+      .attr("d", path);
+
+  svg.selectAll("roadtrip-poi")
+    .data(topojson.feature(romania, romania.objects.roadtripPOI).features)
+  .enter().append("path")
+    .attr("class", function(d) { return "roadtrip-poi " + d.id; })
+    .attr("d", path.pointRadius(1))
+    .on("click", function(d){
+      onPOIClick(d);
+      console.log("GOT: ",  $(".active"));
+      $(".active").css("fill", "#BD0000");
+      d3.select(this).attr("class", function(d) { return "roadtrip-poi-after active"; })
+        .style("fill", "#fff");
+    })
+    .transition()
+        .delay(6000)
+        .duration(400)
+        .ease("linear")
+        .attr("d", path.pointRadius(8))
+        .attr("class", "roadtrip-poi-after");
+
+  //POI labels
+  var POIlabels = svg.selectAll("roadtrip-poi")
+    .data(topojson.feature(romania, romania.objects.roadtripPOI).features)
+  .enter().append("text")
+    .attr("class", "roadtrip-poi-label")
+    .attr("transform", function(d) { return "translate(" + projection(d.geometry.coordinates) + ")"; })
+    .attr("dy", ".4em")
+    .text(function(d) { return d.properties.name; });
+
+  //right justify places left of middle and visa versa
+  svg.selectAll(".roadtrip-poi-label")
+    .attr("x", function(d) { 
+      if (d.properties.name === "Viscri" || d.properties.name === "Bucharest") {
+        return -12;
+      } else {
+        return 12;
+      }
+    })
+    //.attr("x", function(d) { return d.geometry.coordinates[0] > -1 ? 9 : -9; })
+    .style("text-anchor", function(d) { 
+      if (d.properties.name === "Viscri" || d.properties.name === "Bucharest") {
+        return "end";
+      } else {
+        return "start";
+      }
+    })
+
+  //animate the POIs
+  POIlabels
+    .transition()
+          .delay(6000)
+          .duration(400)
+          .ease("linear")
+          .attr("class", "roadtrip-poi-label-after");
+
+
+
+
+
+
+  //animate the roady
+  var totalLength = roady.node().getTotalLength();
+
+    roady
+      .attr("stroke-dasharray", totalLength + " " + totalLength)
+      .attr("stroke-dashoffset", totalLength)
+      .transition()
+        .duration(6000)
+        .ease("linear")
+        .attr("stroke-dashoffset", 0);
+
+
+});
+
+</script>
+      
+    </div>
+
+    <div class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/romania/"> #romania</a>
+          
+            <a href="/tags/roadtrip/"> #roadtrip</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/12/01/metre_challenge/">The Metre Challenge</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/11/27/wikigame/">The Wiki-Game</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </div>
+  </div>
+
+
+
+    
+      <div class="comments" id="comments">
+        
+      </div>
+    
+  </div>
+
+
+        </div>
+
+        
+      </div>
+
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table Of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview">
+        <div class="site-author motion-element">
+          <img class="site-author-image" src="/images/hankseattle.jpg" alt="Henry Goddard" />
+          <p class="site-author-name">Henry Goddard</p>
+        </div>
+        <p class="site-description motion-element"></p>
+        <div class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/">
+              <span class="site-state-item-count">29</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">1</span>
+              <span class="site-state-item-name">categories</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">50</span>
+              <span class="site-state-item-name">tags</span>
+              </a>
+          </div>
+
+        </div>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+              <a href="https://github.com/godd9170" target="_blank">GitHub</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="https://www.linkedin.com/in/hankg" target="_blank">LinkedIn</a>
+            </span>
+            
+          
+        </div>
+
+        
+        
+
+      </div>
+
+      
+        <div class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">Romania</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </div>
+      
+
+    </div>
+  </div>
+
+
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; &nbsp; 
+  2018
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author">Henry Goddard</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/godd9170/hexo-theme-next">
+    NexT (godd9170 fork)
+  </a>
+</div>
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('.content img').each(function () {
+        var $image = $(this);
+        var $imageWrapLink = $image.parent('a');
+
+        if ($imageWrapLink.size() < 1) {
+          $imageWrapLink = $image.wrap('<a href="' + this.getAttribute('src') + '"></a>').parent('a');
+        }
+        $imageWrapLink.addClass('fancybox');
+      });
+    });
+    $('.fancybox').fancybox({
+      helpers: {
+        overlay: {
+          locked: false
+        }
+      }
+    });
+  </script>
+
+
+  
+  <script type="text/javascript" src="/vendors/unslider/js/unslider-min.js"></script>
+  <script>
+        jQuery(document).ready(function($) {
+            $('.slider').unslider();
+        });
+  </script>
+
+  <script type="text/javascript">
+  function hasMobileUA () {
+    var nav = window.navigator;
+    var ua = nav.userAgent;
+    var pa = /iPad|iPhone|Android|Opera Mini|BlackBerry|webOS|UCWEB|Blazer|PSP|IEMobile|Symbian/g;
+
+    return pa.test(ua);
+  }
+
+  function isDesktop () {
+    return screen.width > 991 && !hasMobileUA();
+  }
+
+  function isTablet () {
+    return screen.width < 992 && screen.width > 767 && hasMobileUA();
+  }
+
+  function isMobile () {
+    return screen.width < 767 && hasMobileUA();
+  }
+
+  function escapeSelector (selector) {
+    return selector.replace(/[!"$%&'()*+,.\/:;<=>?@[\\\]^`{|}~]/g, "\\$&")
+  }
+
+  function displaySidebar () {
+    setTimeout(function () {
+      $('.sidebar-toggle').trigger('click');
+    }, 800);
+  }
+</script>
+
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" id="motion.global">
+  $(document).ready(function () {
+    var body = $('body');
+    var isSidebarVisible = false;
+    var sidebarToggle = $('.sidebar-toggle');
+    var sidebarToggleLine1st = $('.sidebar-toggle-line-first')
+    var sidebarToggleLine2nd = $('.sidebar-toggle-line-middle');
+    var sidebarToggleLine3rd = $('.sidebar-toggle-line-last');
+    var sidebar = $('.sidebar');
+
+    var SIDEBAR_WIDTH = '320px';
+    var SIDEBAR_DISPLAY_DURATION = 300;
+
+    var sidebarToogleLineStatusInit = {width: '100%', opacity: 1, left: 0, rotateZ: 0, top: 0};
+
+    var sidebarToggleLine1stStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine1stStatusArrow = {width: '50%', rotateZ: '-45deg', top: '2px'};
+    var sidebarToogleLine1stStatusClose = {width: '100%', rotateZ: '-45deg', top: '5px'};
+
+    var sidebarToggleLine2ndStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine2ndStatusArrow = {width: '90%'};
+    var sidebarToogleLine2ndStatusClose = {opacity: 0};
+
+    var sidebarToggleLine3rdStatusInit = sidebarToogleLineStatusInit;
+    var sidebarToggleLine3rdStatusArrow = {width: '50%', rotateZ: '45deg', top: '-2px'};
+    var sidebarToogleLine3rdStatusClose = {width: '100%', rotateZ: '45deg', top: '-5px'};
+
+    LogoAndMenuMotion();
+    sidebarToggleMotion();
+    postsListMotion();
+    backToTopMotion();
+
+
+    $(document)
+      .on('sidebar.isShowing', function () {
+        isDesktop() && body.velocity(
+          {paddingRight: SIDEBAR_WIDTH},
+          SIDEBAR_DISPLAY_DURATION
+        );
+        sidebarContentMotion();
+      })
+      .on('sidebar.isHiding', function () {});
+
+    function LogoAndMenuMotion() {
+      $.Velocity.RunSequence([
+        { e: $('.brand'), p: { opacity: 1 }, o: { duration: 100 } },
+        { e: $('.logo'), p: { opacity: 1, top: 0 }, o: { duration: 50} },
+        
+        { e: $('.site-title'), p: { opacity: 1, top: 0 }, o: { duration: 200 } }
+      ]);
+      $('.menu-item').velocity('transition.slideDownIn', {display: null});
+    }
+
+
+    function backToTopMotion () {
+      var b2top = $('.back-to-top');
+      b2top.on('click', function () {
+        body.velocity('scroll');
+      });
+    }
+
+    function sidebarShowMotion () {
+
+      sidebarToggleLine1st.velocity(sidebarToogleLine1stStatusClose);
+      sidebarToggleLine2nd.velocity(sidebarToogleLine2ndStatusClose);
+      sidebarToggleLine3rd.velocity(sidebarToogleLine3rdStatusClose);
+
+      sidebar.velocity({width: SIDEBAR_WIDTH}, {
+        display: 'block',
+        duration: SIDEBAR_DISPLAY_DURATION,
+        complete: function () {
+          sidebar.addClass('sidebar-active');
+          sidebar.trigger('sidebar.didShow');
+        }
+      });
+      sidebar.trigger('sidebar.isShowing');
+    }
+
+    function sidebarHideMotion () {
+      isDesktop() && body.velocity({paddingRight: 0});
+      sidebar.velocity('reverse');
+
+      sidebarToggleLine1st.velocity(sidebarToggleLine1stStatusInit);
+      sidebarToggleLine2nd.velocity(sidebarToggleLine2ndStatusInit);
+      sidebarToggleLine3rd.velocity(sidebarToggleLine3rdStatusInit);
+
+      sidebar.removeClass('sidebar-active');
+      sidebar.trigger('sidebar.isHiding');
+    };
+
+    function sidebarContentMotion () {
+      $('.sidebar .motion-element').velocity(
+        'transition.slideRightIn',
+        {stagger: 50, drag: true}
+      );
+    }
+
+    function postsListMotion () {
+      var postMotionOptions = window.postMotionOptions || {stagger: 300, drag: true};
+      $('.post').velocity('transition.slideDownIn', postMotionOptions);
+    }
+
+    function sidebarToggleMotion () {
+      sidebarToggle.on('click', function () {
+        isSidebarVisible ? sidebarHideMotion() : sidebarShowMotion();
+        isSidebarVisible = !isSidebarVisible;
+      });
+
+      sidebarToggle.hover(function () {
+        if (isSidebarVisible) {return}
+        sidebarToggleLine1st.velocity('stop').velocity(sidebarToggleLine1stStatusArrow);
+        sidebarToggleLine2nd.velocity('stop').velocity(sidebarToggleLine2ndStatusArrow);
+        sidebarToggleLine3rd.velocity('stop').velocity(sidebarToggleLine3rdStatusArrow);
+      }, function () {
+        if (isSidebarVisible) {return}
+        sidebarToggleLine1st.velocity('stop').velocity(sidebarToggleLine1stStatusInit);
+        sidebarToggleLine2nd.velocity('stop').velocity(sidebarToggleLine2ndStatusInit);
+        sidebarToggleLine3rd.velocity('stop').velocity(sidebarToggleLine3rdStatusInit);
+      });
+    }
+  });
+
+</script>
+
+
+
+
+
+  
+  
+<script type="text/javascript" id="bootstrap.scrollspy.custom">
+  /* ========================================================================
+  * Bootstrap: scrollspy.js v3.3.2
+  * http://getbootstrap.com/javascript/#scrollspy
+  * ========================================================================
+  * Copyright 2011-2015 Twitter, Inc.
+  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+  * ======================================================================== */
+
+  /**
+   * Custom by iissnan
+   *
+   * - Add a `clear.bs.scrollspy` event.
+   * - Esacpe targets selector.
+   */
+
+
+  +function ($) {
+    'use strict';
+
+    // SCROLLSPY CLASS DEFINITION
+    // ==========================
+
+    function ScrollSpy(element, options) {
+      this.$body          = $(document.body)
+      this.$scrollElement = $(element).is(document.body) ? $(window) : $(element)
+      this.options        = $.extend({}, ScrollSpy.DEFAULTS, options)
+      this.selector       = (this.options.target || '') + ' .nav li > a'
+      this.offsets        = []
+      this.targets        = []
+      this.activeTarget   = null
+      this.scrollHeight   = 0
+
+      this.$scrollElement.on('scroll.bs.scrollspy', $.proxy(this.process, this))
+      this.refresh()
+      this.process()
+    }
+
+    ScrollSpy.VERSION  = '3.3.2'
+
+    ScrollSpy.DEFAULTS = {
+      offset: 10
+    }
+
+    ScrollSpy.prototype.getScrollHeight = function () {
+      return this.$scrollElement[0].scrollHeight || Math.max(this.$body[0].scrollHeight, document.documentElement.scrollHeight)
+    }
+
+    ScrollSpy.prototype.refresh = function () {
+      var that          = this
+      var offsetMethod  = 'offset'
+      var offsetBase    = 0
+
+      this.offsets      = []
+      this.targets      = []
+      this.scrollHeight = this.getScrollHeight()
+
+      if (!$.isWindow(this.$scrollElement[0])) {
+        offsetMethod = 'position'
+        offsetBase   = this.$scrollElement.scrollTop()
+      }
+
+      this.$body
+        .find(this.selector)
+        .map(function () {
+          var $el   = $(this)
+          var href  = $el.data('target') || $el.attr('href')
+          var $href = /^#./.test(href) && $(escapeSelector(href)) // Need to escape selector.
+
+          return ($href
+            && $href.length
+            && $href.is(':visible')
+            && [[$href[offsetMethod]().top + offsetBase, href]]) || null
+        })
+        .sort(function (a, b) { return a[0] - b[0] })
+        .each(function () {
+          that.offsets.push(this[0])
+          that.targets.push(this[1])
+        })
+
+
+    }
+
+    ScrollSpy.prototype.process = function () {
+      var scrollTop    = this.$scrollElement.scrollTop() + this.options.offset
+      var scrollHeight = this.getScrollHeight()
+      var maxScroll    = this.options.offset + scrollHeight - this.$scrollElement.height()
+      var offsets      = this.offsets
+      var targets      = this.targets
+      var activeTarget = this.activeTarget
+      var i
+
+      if (this.scrollHeight != scrollHeight) {
+        this.refresh()
+      }
+
+      if (scrollTop >= maxScroll) {
+        return activeTarget != (i = targets[targets.length - 1]) && this.activate(i)
+      }
+
+      if (activeTarget && scrollTop < offsets[0]) {
+        $(this.selector).trigger('clear.bs.scrollspy')  // Add a custom event.
+        this.activeTarget = null
+        return this.clear()
+      }
+
+      for (i = offsets.length; i--;) {
+        activeTarget != targets[i]
+          && scrollTop >= offsets[i]
+          && (!offsets[i + 1] || scrollTop <= offsets[i + 1])
+          && this.activate(targets[i])
+      }
+    }
+
+    ScrollSpy.prototype.activate = function (target) {
+      this.activeTarget = target
+
+      this.clear()
+
+      var selector = this.selector +
+        '[data-target="' + target + '"],' +
+        this.selector + '[href="' + target + '"]'
+
+      var active = $(selector)
+        .parents('li')
+        .addClass('active')
+
+      if (active.parent('.dropdown-menu').length) {
+        active = active
+          .closest('li.dropdown')
+          .addClass('active')
+      }
+
+      active.trigger('activate.bs.scrollspy')
+    }
+
+    ScrollSpy.prototype.clear = function () {
+      $(this.selector)
+        .parentsUntil(this.options.target, '.active')
+        .removeClass('active')
+    }
+
+
+    // SCROLLSPY PLUGIN DEFINITION
+    // ===========================
+
+    function Plugin(option) {
+      return this.each(function () {
+        var $this   = $(this)
+        var data    = $this.data('bs.scrollspy')
+        var options = typeof option == 'object' && option
+
+        if (!data) $this.data('bs.scrollspy', (data = new ScrollSpy(this, options)))
+        if (typeof option == 'string') data[option]()
+      })
+    }
+
+    var old = $.fn.scrollspy
+
+    $.fn.scrollspy             = Plugin
+    $.fn.scrollspy.Constructor = ScrollSpy
+
+
+    // SCROLLSPY NO CONFLICT
+    // =====================
+
+    $.fn.scrollspy.noConflict = function () {
+      $.fn.scrollspy = old
+      return this
+    }
+
+
+    // SCROLLSPY DATA-API
+    // ==================
+
+    $(window).on('load.bs.scrollspy.data-api', function () {
+      $('[data-spy="scroll"]').each(function () {
+        var $spy = $(this)
+        Plugin.call($spy, $spy.data())
+      })
+    })
+
+  }(jQuery);
+</script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      if (isDesktop() && HEXO_SIDEBAR_CONFIGURATION === 'post') {
+        displaySidebar();
+      }
+    });
+  </script>
+
+
+
+
+  <script type="text/javascript">
+    var HEXO_SIDEBAR_CONFIGURATION = 'hide';
+    $(document).ready(function () {
+      if (HEXO_SIDEBAR_CONFIGURATION === 'always') {
+        displaySidebar();
+      }
+    });
+  </script>
+
+  
+
+  
+  
+  
+
+  
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+        function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create','UA-69672705-1');ga('send','pageview');
+  </script>
+
+</body>
+</html>
